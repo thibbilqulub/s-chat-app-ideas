@@ -45,7 +45,7 @@ const TestResults = () => {
   };
 
   if (!result) {
-    return <div className="flex justify-center items-center min-h-screen">Loading results...</div>;
+    return <div className="flex justify-center items-center min-h-screen">Memuat hasil...</div>;
   }
   
   // Prepare data for radar chart
@@ -64,7 +64,7 @@ const TestResults = () => {
     
   const chartConfig = {
     value: {
-      label: "Score",
+      label: "Skor",
       color: "#8884d8"
     }
   };
@@ -74,13 +74,13 @@ const TestResults = () => {
       <div className="container mx-auto max-w-4xl">
         <Card className="mb-6">
           <CardHeader>
-            <CardTitle className="text-2xl text-center">Your Multiple Intelligences Profile</CardTitle>
+            <CardTitle className="text-2xl text-center">Profil Kecerdasan Majemuk Anda</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-center mb-4">
-              <h3 className="text-lg font-medium">Thank you, {result.name}!</h3>
+              <h3 className="text-lg font-medium">Terima kasih, {result.name}!</h3>
               <p className="text-gray-600">
-                Below are the results of your multiple intelligences assessment.
+                Berikut adalah hasil dari penilaian kecerdasan majemuk Anda.
               </p>
             </div>
             
@@ -89,7 +89,7 @@ const TestResults = () => {
                 <RadarChart data={radarData} outerRadius="70%">
                   <PolarGrid />
                   <PolarAngleAxis dataKey="subject" />
-                  <Radar name="Score" dataKey="value" fill="#8884d8" fillOpacity={0.6} />
+                  <Radar name="Skor" dataKey="value" fill="#8884d8" fillOpacity={0.6} />
                 </RadarChart>
               </ChartContainer>
             </div>
@@ -98,12 +98,12 @@ const TestResults = () => {
         
         <Card className="mb-6">
           <CardHeader>
-            <CardTitle className="text-xl">Your Dominant Intelligence: {intelligenceTypes[result.dominantType]}</CardTitle>
+            <CardTitle className="text-xl">Kecerdasan Dominan Anda: {intelligenceTypes[result.dominantType]}</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="mb-4">{intelligenceDescriptions[result.dominantType]}</p>
             
-            <h3 className="font-bold text-lg mb-2">Your Intelligence Scores</h3>
+            <h3 className="font-bold text-lg mb-2">Skor Kecerdasan Anda</h3>
             <div className="space-y-4">
               {sortedScores.map(({ type, score }) => (
                 <div key={type}>
@@ -124,7 +124,7 @@ const TestResults = () => {
         </Card>
         
         <div className="text-center">
-          <Button onClick={handleReturnHome} className="px-8">Return to Home</Button>
+          <Button onClick={handleReturnHome} className="px-8">Kembali ke Beranda</Button>
         </div>
       </div>
     </div>

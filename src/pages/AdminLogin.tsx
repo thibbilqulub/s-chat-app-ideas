@@ -26,8 +26,8 @@ const AdminLogin = () => {
       navigate("/admin/dashboard");
     } else {
       toast({
-        title: "Login Failed",
-        description: "Invalid username or password",
+        title: "Login Gagal",
+        description: "Username atau password tidak valid",
         variant: "destructive",
       });
     }
@@ -37,9 +37,9 @@ const AdminLogin = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <Card className="w-full max-w-md">
         <CardHeader>
-          <CardTitle className="text-2xl text-center">Admin Login</CardTitle>
+          <CardTitle className="text-2xl text-center">Login Admin</CardTitle>
           <CardDescription className="text-center">
-            Please login to access the admin dashboard
+            Silakan masuk untuk mengakses dasbor admin
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleLogin}>
@@ -66,7 +66,7 @@ const AdminLogin = () => {
             </div>
           </CardContent>
           <CardFooter>
-            <Button type="submit" className="w-full">Login</Button>
+            <Button type="submit" className="w-full">Masuk</Button>
           </CardFooter>
         </form>
       </Card>

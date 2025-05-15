@@ -158,7 +158,7 @@ const TestQuestions = () => {
 
   // If questions aren't loaded yet
   if (shuffledQuestions.length === 0) {
-    return <div className="flex justify-center items-center min-h-screen">Loading...</div>;
+    return <div className="flex justify-center items-center min-h-screen">Memuat...</div>;
   }
 
   const question = shuffledQuestions[currentQuestion];
@@ -167,9 +167,9 @@ const TestQuestions = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <Card className="w-full max-w-lg">
         <CardHeader>
-          <CardTitle className="text-xl text-center">Multiple Intelligences Test</CardTitle>
+          <CardTitle className="text-xl text-center">Tes Kecerdasan Majemuk</CardTitle>
           <CardDescription className="text-center">
-            Question {currentQuestion + 1} of {shuffledQuestions.length}
+            Pertanyaan {currentQuestion + 1} dari {shuffledQuestions.length}
           </CardDescription>
           <Progress value={progress} className="w-full" />
         </CardHeader>
@@ -182,8 +182,8 @@ const TestQuestions = () => {
             className="space-y-3"
           >
             <div className="flex justify-between items-center">
-              <div>Strongly Disagree</div>
-              <div>Strongly Agree</div>
+              <div>Sangat Tidak Setuju</div>
+              <div>Sangat Setuju</div>
             </div>
             <div className="flex justify-between gap-2">
               {[1, 2, 3, 4, 5].map((value) => (
@@ -200,7 +200,7 @@ const TestQuestions = () => {
             onClick={handleNext} 
             disabled={!currentAnswer || currentAnswer === "0"}
           >
-            {currentQuestion < shuffledQuestions.length - 1 ? "Next Question" : "Complete Test"}
+            {currentQuestion < shuffledQuestions.length - 1 ? "Pertanyaan Berikutnya" : "Selesaikan Tes"}
           </Button>
         </CardFooter>
       </Card>
