@@ -3,9 +3,27 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { RadarChart, PolarGrid, PolarAngleAxis, Radar } from "recharts";
-import { ChartContainer } from "@/components/ui/chart";
+import { 
+  Chart as ChartJS, 
+  RadialLinearScale, 
+  PointElement, 
+  LineElement, 
+  Filler, 
+  Tooltip, 
+  Legend 
+} from "chart.js";
+import { Radar } from "react-chartjs-2";
 import { intelligenceTypes, intelligenceDescriptions, IntelligenceType } from "@/data/testQuestions";
+
+// Register Chart.js components
+ChartJS.register(
+  RadialLinearScale,
+  PointElement,
+  LineElement,
+  Filler,
+  Tooltip,
+  Legend
+);
 
 type TestResult = {
   id: string;
@@ -48,11 +66,42 @@ const TestResults = () => {
     return <div className="flex justify-center items-center min-h-screen">Loading results...</div>;
   }
   
-  // Prepare data for radar chart
-  const radarData = Object.entries(result.results).map(([key, value]) => ({
-    subject: intelligenceTypes[key as IntelligenceType].split(" ")[0], // Just take first word for chart
-    value: value,
-  }));
+  // Prepare data for radar chart using Chart.js format
+  const chartData = {
+    labels: Object.keys(result.results).map(key => 
+      intelligenceTypes[key as IntelligenceType].split(" ")[0] // Just take first word for chart
+    ),
+    datasets: [
+      {
+        label: 'Intelligence Score',
+        data: Object.values(result.results),
+        backgroundColor: 'rgba(136, 132, 216, 0.2)',
+        borderColor: 'rgba(136, 132, 216, 1)',
+        pointBackgroundColor: 'rgba(136, 132, 216, 1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(136, 132, 216, 1)',
+      },
+    ],
+  };
+
+  const chartOptions = {
+    scales: {
+      r: {
+        angleLines: {
+          display: true,
+        },
+        suggestedMin: 0,
+        suggestedMax: 100,
+      },
+    },
+    plugins: {
+      legend: {
+        display: true,
+      },
+    },
+    maintainAspectRatio: false,
+  };
   
   // Sort intelligences by score (highest first)
   const sortedScores = Object.entries(result.results)
@@ -61,13 +110,6 @@ const TestResults = () => {
       type: type as IntelligenceType,
       score,
     }));
-    
-  const chartConfig = {
-    value: {
-      label: "Score",
-      color: "#8884d8"
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4">
@@ -85,13 +127,7 @@ const TestResults = () => {
             </div>
             
             <div className="h-72 mx-auto">
-              <ChartContainer config={chartConfig}>
-                <RadarChart data={radarData} outerRadius="70%">
-                  <PolarGrid />
-                  <PolarAngleAxis dataKey="subject" />
-                  <Radar name="Score" dataKey="value" fill="#8884d8" fillOpacity={0.6} />
-                </RadarChart>
-              </ChartContainer>
+              <Radar data={chartData} options={chartOptions} />
             </div>
           </CardContent>
         </Card>
