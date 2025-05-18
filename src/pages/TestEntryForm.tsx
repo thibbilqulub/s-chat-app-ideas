@@ -49,8 +49,8 @@ const TestEntryForm = () => {
     // Validation
     if (!userData.name || userData.age <= 0 || !userData.gender || !userData.email || !userData.occupation) {
       toast({
-        title: "Formulir Tidak Lengkap",
-        description: "Mohon isi semua kolom yang diperlukan",
+        title: "Form Incomplete",
+        description: "Please fill in all required fields",
         variant: "destructive",
       });
       return;
@@ -67,15 +67,15 @@ const TestEntryForm = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <Card className="w-full max-w-lg">
         <CardHeader>
-          <CardTitle className="text-2xl text-center">Sebelum Anda Mulai</CardTitle>
+          <CardTitle className="text-2xl text-center">Before You Begin</CardTitle>
           <CardDescription className="text-center">
-            Mohon berikan informasi Anda untuk memulai Tes Kecerdasan Majemuk
+            Please provide your information to start the Multiple Intelligences Test
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
           <CardContent className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="name">Nama Lengkap</Label>
+              <Label htmlFor="name">Full Name</Label>
               <Input 
                 id="name"
                 name="name"
@@ -86,7 +86,7 @@ const TestEntryForm = () => {
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="age">Usia</Label>
+              <Label htmlFor="age">Age</Label>
               <Input 
                 id="age"
                 name="age"
@@ -100,7 +100,7 @@ const TestEntryForm = () => {
             </div>
             
             <div className="space-y-2">
-              <Label>Jenis Kelamin</Label>
+              <Label>Gender</Label>
               <RadioGroup 
                 value={userData.gender} 
                 onValueChange={handleGenderChange}
@@ -108,19 +108,19 @@ const TestEntryForm = () => {
               >
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="male" id="male" />
-                  <Label htmlFor="male">Laki-laki</Label>
+                  <Label htmlFor="male">Male</Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="female" id="female" />
-                  <Label htmlFor="female">Perempuan</Label>
+                  <Label htmlFor="female">Female</Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="non-binary" id="non-binary" />
-                  <Label htmlFor="non-binary">Non-biner</Label>
+                  <Label htmlFor="non-binary">Non-binary</Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="prefer-not-to-say" id="prefer-not-to-say" />
-                  <Label htmlFor="prefer-not-to-say">Tidak ingin memberitahu</Label>
+                  <Label htmlFor="prefer-not-to-say">Prefer not to say</Label>
                 </div>
               </RadioGroup>
             </div>
@@ -138,7 +138,7 @@ const TestEntryForm = () => {
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="occupation">Pekerjaan</Label>
+              <Label htmlFor="occupation">Occupation</Label>
               <Input 
                 id="occupation"
                 name="occupation"
@@ -149,7 +149,7 @@ const TestEntryForm = () => {
             </div>
           </CardContent>
           <CardFooter>
-            <Button type="submit" className="w-full">Mulai Tes</Button>
+            <Button type="submit" className="w-full">Start Test</Button>
           </CardFooter>
         </form>
       </Card>

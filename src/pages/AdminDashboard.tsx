@@ -6,7 +6,7 @@ import { ChartContainer, ChartLegend, ChartTooltip } from "@/components/ui/chart
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
+import { RadarChart, Radar, PolarGrid, PolarAngleAxis, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
 
 // Types for our test data
 type TestResult = {
@@ -133,23 +133,23 @@ const getChartData = (testResults: TestResult[]) => {
 
   const radarData = [
     {
-      subject: "Linguistik",
+      subject: "Linguistic",
       A: testResults.length > 0 ? totalScores.linguistic / testResults.length : 0,
     },
     {
-      subject: "Logika",
+      subject: "Logical",
       A: testResults.length > 0 ? totalScores.logical / testResults.length : 0,
     },
     {
-      subject: "Musikal",
+      subject: "Musical",
       A: testResults.length > 0 ? totalScores.musical / testResults.length : 0,
     },
     {
-      subject: "Kinestetik",
+      subject: "Bodily",
       A: testResults.length > 0 ? totalScores.bodily / testResults.length : 0,
     },
     {
-      subject: "Spasial",
+      subject: "Spatial",
       A: testResults.length > 0 ? totalScores.spatial / testResults.length : 0,
     },
     {
@@ -161,7 +161,7 @@ const getChartData = (testResults: TestResult[]) => {
       A: testResults.length > 0 ? totalScores.intrapersonal / testResults.length : 0,
     },
     {
-      subject: "Naturalis",
+      subject: "Naturalistic",
       A: testResults.length > 0 ? totalScores.naturalistic / testResults.length : 0,
     }
   ];
@@ -202,7 +202,7 @@ const AdminDashboard = () => {
 
   const chartConfig = {
     A: {
-      label: "Skor Rata-Rata",
+      label: "Average Score",
       color: "#8884d8"
     }
   };
@@ -211,24 +211,23 @@ const AdminDashboard = () => {
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto p-4">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold text-purple-800">Dasbor Admin</h1>
-          <Button variant="outline" onClick={handleLogout}>Keluar</Button>
+          <h1 className="text-3xl font-bold text-purple-800">Admin Dashboard</h1>
+          <Button variant="outline" onClick={handleLogout}>Logout</Button>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
           {/* Chart 1: Average Intelligence Scores */}
           <Card>
             <CardHeader>
-              <CardTitle>Rata-Rata Skor Kecerdasan</CardTitle>
+              <CardTitle>Average Intelligence Scores</CardTitle>
             </CardHeader>
             <CardContent className="h-80">
               <ChartContainer className="h-full" config={chartConfig}>
                 <RadarChart data={radarData}>
                   <PolarGrid />
                   <PolarAngleAxis dataKey="subject" />
-                  <PolarRadiusAxis domain={[0, 100]} />
                   <ChartTooltip />
-                  <Radar name="Skor Rata-Rata" dataKey="A" fill="#8884d8" fillOpacity={0.6} />
+                  <Radar name="Average Score" dataKey="A" fill="#8884d8" fillOpacity={0.6} />
                 </RadarChart>
               </ChartContainer>
             </CardContent>
@@ -237,7 +236,7 @@ const AdminDashboard = () => {
           {/* Chart 2: Dominant Intelligence Types */}
           <Card>
             <CardHeader>
-              <CardTitle>Jenis Kecerdasan Dominan</CardTitle>
+              <CardTitle>Dominant Intelligence Types</CardTitle>
             </CardHeader>
             <CardContent className="h-80">
               <ResponsiveContainer width="100%" height="100%">
@@ -245,7 +244,7 @@ const AdminDashboard = () => {
                   <XAxis dataKey="name" />
                   <YAxis />
                   <Tooltip />
-                  <Bar dataKey="count" fill="#8884d8" name="Jumlah" />
+                  <Bar dataKey="count" fill="#8884d8" />
                 </BarChart>
               </ResponsiveContainer>
             </CardContent>
@@ -255,20 +254,20 @@ const AdminDashboard = () => {
         {/* Test Results Table */}
         <Card>
           <CardHeader>
-            <CardTitle>Hasil Tes</CardTitle>
+            <CardTitle>Test Results</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="overflow-x-auto">
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Nama</TableHead>
-                    <TableHead>Usia</TableHead>
-                    <TableHead>Jenis Kelamin</TableHead>
+                    <TableHead>Name</TableHead>
+                    <TableHead>Age</TableHead>
+                    <TableHead>Gender</TableHead>
                     <TableHead>Email</TableHead>
-                    <TableHead>Pekerjaan</TableHead>
-                    <TableHead>Tanggal</TableHead>
-                    <TableHead>Tipe Dominan</TableHead>
+                    <TableHead>Occupation</TableHead>
+                    <TableHead>Date</TableHead>
+                    <TableHead>Dominant Type</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>

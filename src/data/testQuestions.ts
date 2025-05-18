@@ -16,25 +16,25 @@ export type Question = {
 };
 
 export const intelligenceTypes: Record<IntelligenceType, string> = {
-  linguistic: "Kecerdasan Linguistik",
-  logical: "Kecerdasan Logis-Matematis",
-  musical: "Kecerdasan Musikal",
-  bodily: "Kecerdasan Kinestetik-Jasmani",
-  spatial: "Kecerdasan Spasial",
-  interpersonal: "Kecerdasan Interpersonal",
-  intrapersonal: "Kecerdasan Intrapersonal",
-  naturalistic: "Kecerdasan Naturalistik"
+  linguistic: "Linguistic Intelligence",
+  logical: "Logical-Mathematical Intelligence",
+  musical: "Musical Intelligence",
+  bodily: "Bodily-Kinesthetic Intelligence",
+  spatial: "Spatial Intelligence",
+  interpersonal: "Interpersonal Intelligence",
+  intrapersonal: "Intrapersonal Intelligence",
+  naturalistic: "Naturalistic Intelligence"
 };
 
 export const intelligenceDescriptions: Record<IntelligenceType, string> = {
-  linguistic: "Kepekaan terhadap makna dan urutan kata. Kemampuan dalam membaca, menulis, bercerita, dan ekspresi verbal.",
-  logical: "Kemampuan bekerja dengan angka, pola logis, dan penalaran. Kemampuan dalam pemecahan masalah, analisis, dan investigasi ilmiah.",
-  musical: "Kepekaan terhadap nada, melodi, ritme, dan tonal. Kemampuan dalam pertunjukan musik, komposisi, dan apresiasi.",
-  bodily: "Kemampuan mengontrol gerakan tubuh dan kemampuan menangani objek dengan terampil. Kemampuan dalam aktivitas fisik, kerajinan, dan koordinasi.",
-  spatial: "Kemampuan untuk memahami dunia visual-spasial secara akurat. Kemampuan dalam visualisasi, desain artistik, dan penalaran spasial.",
-  interpersonal: "Kemampuan untuk memahami dan berinteraksi secara efektif dengan orang lain. Kemampuan dalam komunikasi, empati, dan membangun hubungan.",
-  intrapersonal: "Kapasitas untuk kesadaran diri dan pemahaman tentang perasaan sendiri. Kemampuan dalam refleksi, pengaturan diri, dan pertumbuhan pribadi.",
-  naturalistic: "Kemampuan mengenali dan mengkategorikan tumbuhan, hewan, dan fenomena alam. Kemampuan dalam mengamati, memahami, dan mengorganisir pola di alam."
+  linguistic: "Sensitivity to the meaning and order of words. Skills in reading, writing, storytelling, and verbal expression.",
+  logical: "Ability to work with numbers, logical patterns, and reasoning. Skills in problem-solving, analysis, and scientific investigation.",
+  musical: "Sensitivity to pitch, melody, rhythm, and tone. Skills in musical performance, composition, and appreciation.",
+  bodily: "Control of one's body movements and the capacity to handle objects skillfully. Skills in physical activities, crafts, and coordination.",
+  spatial: "Capacity to perceive the visual-spatial world accurately. Skills in visualization, artistic design, and spatial reasoning.",
+  interpersonal: "Ability to understand and interact effectively with others. Skills in communication, empathy, and relationship building.",
+  intrapersonal: "Capacity for self-awareness and understanding of one's own feelings. Skills in reflection, self-regulation, and personal growth.",
+  naturalistic: "Ability to recognize and categorize plants, animals, and natural phenomena. Skills in observing, understanding, and organizing patterns in nature."
 };
 
 // Questions for the test - 5 questions per intelligence type
@@ -42,216 +42,216 @@ export const questions: Question[] = [
   // Linguistic Intelligence
   {
     id: "L1",
-    text: "Saya senang membaca buku dan artikel di waktu luang",
+    text: "I enjoy reading books and articles in my free time",
     type: "linguistic"
   },
   {
     id: "L2",
-    text: "Saya mudah menjelaskan ide-ide kompleks kepada orang lain",
+    text: "I find it easy to explain complex ideas to others",
     type: "linguistic"
   },
   {
     id: "L3",
-    text: "Saya menikmati permainan kata seperti TTS atau Scrabble",
+    text: "I enjoy word games like crosswords or Scrabble",
     type: "linguistic"
   },
   {
     id: "L4",
-    text: "Saya pandai mengingat kutipan atau frasa",
+    text: "I'm good at remembering quotes or phrases",
     type: "linguistic"
   },
   {
     id: "L5",
-    text: "Saya mengekspresikan diri dengan baik dalam tulisan",
+    text: "I express myself well in writing",
     type: "linguistic"
   },
   
   // Logical-Mathematical Intelligence
   {
     id: "M1",
-    text: "Saya dapat dengan mudah melakukan perhitungan di kepala",
+    text: "I can easily perform calculations in my head",
     type: "logical"
   },
   {
     id: "M2",
-    text: "Saya senang memecahkan teka-teki atau permainan asah otak",
+    text: "I enjoy solving puzzles or brain teasers",
     type: "logical"
   },
   {
     id: "M3",
-    text: "Saya suka menganalisis masalah secara sistematis",
+    text: "I like to analyze problems systematically",
     type: "logical"
   },
   {
     id: "M4",
-    text: "Saya pandai mengenali pola dan hubungan",
+    text: "I'm good at recognizing patterns and relationships",
     type: "logical"
   },
   {
     id: "M5",
-    text: "Saya sering bertanya tentang bagaimana sesuatu bekerja",
+    text: "I ask questions about how things work",
     type: "logical"
   },
   
   // Musical Intelligence
   {
     id: "Mu1",
-    text: "Saya dapat dengan mudah mengenali instrumen musik yang berbeda dalam lagu",
+    text: "I can easily recognize different musical instruments in a song",
     type: "musical"
   },
   {
     id: "Mu2",
-    text: "Saya sering memiliki melodi atau lagu yang terus terngiang di kepala",
+    text: "I often have tunes or songs stuck in my head",
     type: "musical"
   },
   {
     id: "Mu3",
-    text: "Saya bisa tahu ketika sebuah nada tidak sesuai",
+    text: "I can tell when a note is off-key",
     type: "musical"
   },
   {
     id: "Mu4",
-    text: "Saya senang menciptakan atau mendengarkan musik",
+    text: "I enjoy creating or listening to music",
     type: "musical"
   },
   {
     id: "Mu5",
-    text: "Saya dapat dengan mudah mengingat melodi",
+    text: "I can remember melodies easily",
     type: "musical"
   },
   
   // Bodily-Kinesthetic Intelligence
   {
     id: "B1",
-    text: "Saya menikmati aktivitas fisik dan olahraga",
+    text: "I enjoy physical activities and sports",
     type: "bodily"
   },
   {
     id: "B2",
-    text: "Saya pandai dalam kerajinan atau aktivitas yang memerlukan gerakan tangan yang presisi",
+    text: "I'm good at crafts or activities requiring precise hand movements",
     type: "bodily"
   },
   {
     id: "B3",
-    text: "Saya belajar lebih baik dengan melakukan sesuatu secara fisik daripada membaca tentangnya",
+    text: "I learn better by doing something physically rather than reading about it",
     type: "bodily"
   },
   {
     id: "B4",
-    text: "Saya menggunakan bahasa tubuh dan gestur saat berkomunikasi",
+    text: "I use body language and gestures when communicating",
     type: "bodily"
   },
   {
     id: "B5",
-    text: "Saya memiliki koordinasi dan keseimbangan yang baik",
+    text: "I have good coordination and balance",
     type: "bodily"
   },
   
   // Spatial Intelligence
   {
     id: "S1",
-    text: "Saya dapat dengan mudah memvisualisasikan objek dari perspektif yang berbeda",
+    text: "I can easily visualize objects from different perspectives",
     type: "spatial"
   },
   {
     id: "S2",
-    text: "Saya memiliki arah yang baik",
+    text: "I have a good sense of direction",
     type: "spatial"
   },
   {
     id: "S3",
-    text: "Saya menikmati seni visual, seperti melukis atau fotografi",
+    text: "I enjoy visual arts, such as painting or photography",
     type: "spatial"
   },
   {
     id: "S4",
-    text: "Saya dapat dengan mudah membaca peta dan diagram",
+    text: "I can easily read maps and diagrams",
     type: "spatial"
   },
   {
     id: "S5",
-    text: "Saya memperhatikan detail visual yang mungkin tidak diperhatikan orang lain",
+    text: "I notice visual details that others might miss",
     type: "spatial"
   },
   
   // Interpersonal Intelligence
   {
     id: "I1",
-    text: "Saya menikmati aktivitas sosial dan bertemu orang baru",
+    text: "I enjoy social activities and meeting new people",
     type: "interpersonal"
   },
   {
     id: "I2",
-    text: "Orang sering datang kepada saya untuk meminta saran",
+    text: "People often come to me for advice",
     type: "interpersonal"
   },
   {
     id: "I3",
-    text: "Saya bisa merasakan bagaimana perasaan orang lain",
+    text: "I can sense how others are feeling",
     type: "interpersonal"
   },
   {
     id: "I4",
-    text: "Saya pandai menyelesaikan konflik antara orang-orang",
+    text: "I'm good at resolving conflicts between people",
     type: "interpersonal"
   },
   {
     id: "I5",
-    text: "Saya lebih suka aktivitas berkelompok daripada melakukan sesuatu sendirian",
+    text: "I prefer group activities over doing things alone",
     type: "interpersonal"
   },
   
   // Intrapersonal Intelligence
   {
     id: "Ia1",
-    text: "Saya sering merefleksikan pemikiran dan perasaan saya",
+    text: "I often reflect on my thoughts and feelings",
     type: "intrapersonal"
   },
   {
     id: "Ia2",
-    text: "Saya memiliki pemahaman yang baik tentang kekuatan dan kelemahan saya",
+    text: "I have a good understanding of my strengths and weaknesses",
     type: "intrapersonal"
   },
   {
     id: "Ia3",
-    text: "Saya lebih suka bekerja secara mandiri",
+    text: "I prefer working independently",
     type: "intrapersonal"
   },
   {
     id: "Ia4",
-    text: "Saya menetapkan tujuan dan merencanakan masa depan saya",
+    text: "I set goals and plan for my future",
     type: "intrapersonal"
   },
   {
     id: "Ia5",
-    text: "Saya nyaman dengan diri saya sendiri",
+    text: "I'm comfortable with who I am",
     type: "intrapersonal"
   },
   
   // Naturalistic Intelligence
   {
     id: "N1",
-    text: "Saya menikmati aktivitas luar ruangan dan berada di alam",
+    text: "I enjoy outdoor activities and being in nature",
     type: "naturalistic"
   },
   {
     id: "N2",
-    text: "Saya dapat mengenali dan mengklasifikasikan berbagai jenis tumbuhan atau hewan",
+    text: "I can recognize and classify different types of plants or animals",
     type: "naturalistic"
   },
   {
     id: "N3",
-    text: "Saya tertarik pada isu-isu lingkungan",
+    text: "I'm interested in environmental issues",
     type: "naturalistic"
   },
   {
     id: "N4",
-    text: "Saya memperhatikan pola dan perubahan di alam",
+    text: "I notice patterns and changes in nature",
     type: "naturalistic"
   },
   {
     id: "N5",
-    text: "Saya senang belajar tentang fenomena alam",
+    text: "I enjoy learning about natural phenomena",
     type: "naturalistic"
   }
 ];
